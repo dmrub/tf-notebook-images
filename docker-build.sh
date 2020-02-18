@@ -28,6 +28,10 @@ IMAGE_TAG=${IMAGE_TAG:-${BASE_IMAGE_TAG}}
 IMAGE_NAME=${IMAGE_NAME:-${BASE_IMAGE_NAME}}
 IMAGE=${IMAGE_PREFIX}${IMAGE_NAME}${IMAGE_TAG+:}${IMAGE_TAG}
 
+usage() {
+    echo "./docker-build.sh [-t|--tag image] [--no-cache]"
+}
+
 while [[ $# -gt 0 ]]; do
     case "$1" in
         -t|--tag)
